@@ -1,0 +1,85 @@
+# site properties and page defaults
+title: PHB
+subtitle: Psychologische Methodenlehre
+description: Statistik und Forschungsmethoden an der Psychologischen Hochschule Berlin
+header: images/lines-7.png
+footer: images/lines-21.png
+proofer: false
+
+# site social media and other links
+links:
+#  email: kontakt@psychologische-hochschule.de
+#   orcid: 0000-0001-8713-9213
+#   google-scholar: ETJoidYAAAAJ
+#   github: your-lab
+#   twitter: YourLabHandle
+#   youtube: YourLabChannel
+
+### jekyll settings
+jekyll-spaceship:
+  # default enabled processors
+  processors:
+    - mathjax-processor
+    - plantuml-processor
+    - mermaid-processor
+    - polyfill-processor
+    - media-processor
+    - emoji-processor
+    - element-processor
+
+# front matter defaults
+defaults:
+  # all markdown files
+  - scope:
+      path: ""
+    values:
+      layout: default
+  # markdown files in /_members
+  - scope:
+      type: "members"
+    values:
+      layout: member
+  # markdown files in /_posts
+  - scope:
+      type: "posts"
+    values:
+      layout: post
+
+collections:
+  # generate page for each member
+  members:
+    output: true
+  # generate page for each post
+  posts:
+    output: true
+
+# jekyll plugins
+plugins:
+  - jekyll-spaceship
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-feed
+  - jekyll-last-modified-at
+  - jekyll-toc
+
+# code block syntax highlighting
+highlighter: rouge
+
+# jekyll theme
+theme: null
+
+# sass settings
+sass:
+  sass_dir: _styles
+
+# force jekyll to include certain files/folders
+include:
+  - _styles
+  - _scripts
+
+# force jekyll to exclude certain files/folders
+exclude:
+  - README.md
+  - LICENSE.md
+  - CITATION.cff
+
